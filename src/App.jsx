@@ -9,11 +9,15 @@ import Dashboard from "./pages/admin"
 import AdminBooks from "./pages/admin/books"
 import BookCreate from "./pages/admin/books/create"
 
-// 1. Import halaman Genres & Authors
+// 1. Import halaman Genres (Index, Create, Edit)
 import GenresIndex from "./pages/admin/genres/index"
 import GenresCreate from "./pages/admin/genres/create"
+import GenresEdit from "./pages/admin/genres/edit"
+
+// 2. Import halaman Authors (Index, Create, Edit)
 import AuthorsIndex from "./pages/admin/authors/index"
 import AuthorsCreate from "./pages/admin/authors/create"
+import AuthorsEdit from "./pages/admin/authors/edit" 
 
 function App() {
 
@@ -39,17 +43,20 @@ function App() {
               <Route path="create" element={<BookCreate />} />
             </Route>
 
-            {/* 2. Tambahkan rute Genres */}
+            {/* Rute Genres (Index, Create, Edit) */}
             <Route path="genres">
               <Route index element={<GenresIndex />} />
               <Route path="create" element={<GenresCreate />} />
+              <Route path="edit/:id" element={<GenresEdit />} /> 
             </Route>
 
-            {/* 3. Tambahkan rute Authors */}
+            {/* Rute Authors (Index, Create, Edit) */}
             <Route path="authors">
               <Route index element={<AuthorsIndex />} />
               <Route path="create" element={<AuthorsCreate />} />
+              <Route path="edit/:id" element={<AuthorsEdit />} /> 
             </Route>
+            
 
           </Route>
         </Routes>
